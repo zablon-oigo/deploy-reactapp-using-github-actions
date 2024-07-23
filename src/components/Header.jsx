@@ -7,7 +7,8 @@ import Logo from '../assets/img/logo.png'
 function Header() {
     const[navMobile,setNavMobile]=useState(false)
   return (
-    <header className='relative z-20 px-4 mb-12 md:mb-0 md:px-0'>
+    <header className='relative z-20 px-4 mb-12 md:mb-0 md:px-0'
+    data-aos="fade-down" data-aos-delay="1200" data-aos-duration="1000">
         <div className="container mx-auto">
             <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-x-[120px]">
