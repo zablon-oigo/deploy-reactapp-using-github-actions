@@ -26,8 +26,19 @@ export default function Features() {
                   <div className="max-w-[120px] md:mr-7 md:max-w-[232px]">
                     <img src={image} alt="" className="" />
                   </div>
-                  <div className="">
-                    
+                  <div className="max-w-[220px]">
+                    <h3 className="mb-4 h3">
+                      {title}
+                    </h3>
+                    <p className="mb-4 italic font-light">
+                      {description}
+                    </p>
+                    <div className="flex items-center group gap-x-2">
+                      <a href="" className="font-bold text-primary">
+                        {linkText}
+                      </a>
+                      <BsArrowRight className='text-xl text-accent-primary group-hover:ml-[5px] transition-all'/>
+                    </div>
                   </div>
                 </div>
               )
