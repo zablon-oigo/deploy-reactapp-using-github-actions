@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 import Hero from "./components/Hero"
 import About from "./components/About";
 import Features from "./components/Features";
+import Testimonial from "./components/Testimonial";
 
 function App() {
   Aos.init({
@@ -15,6 +16,7 @@ function App() {
       <Hero/>
       <About/>
       <Features/>
+      <Testimonial/>
       </div>
     </>
   )
