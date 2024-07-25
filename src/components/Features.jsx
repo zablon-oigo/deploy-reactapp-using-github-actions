@@ -8,10 +8,10 @@ export default function Features() {
     <section className="my-[70px] md:my-[150px]">
       <div className="container mx-auto">
         <div className="text-center">
-          <h2 className="mb-6 h2 md:mb-12">
+          <h2 className="mb-6 h2 md:mb-12" data-aos="fade-down" data-aos-delay="100">
             {title}
           </h2>
-          <p className="lead max-w[584px] mx-auto mb-16 md:mb-24">
+          <p className="lead max-w[584px] mx-auto mb-16 md:mb-24" data-aos="fade-down" data-aos-delay="200">
             {subtitle}
           </p>
         </div>
@@ -19,11 +19,11 @@ export default function Features() {
             {list.map((feature,index)=>{
               const{image,bgImage,title,description,linkText,delay}=feature;
               return(
-                <div className="w-full max-w-[530px] relative flex flex-col items-center justify-center md:flex-row md:justify-start mx-auto" key={index}>
+                <div className="w-full max-w-[530px] relative flex flex-col items-center justify-center md:flex-row md:justify-start mx-auto" key={index} data-aos="fade-down" data-aos-offset="100" data-aos-delay={delay}    >
                   <div className="absolute top-0 right-0 hidden md:flex -z-10">
                     <img src={bgImage} alt="" className="" />
                   </div>
-                  <div className="max-w-[120px] md:mr-7 md:max-w-[232px]">
+                  <div className="max-w-[120px] md:mr-7 md:max-w-[232px]" data-aos="zoom-in-right" data-aos-delay={delay}>
                     <img src={image} alt="" className="" />
                   </div>
                   <div className="max-w-[220px]">
