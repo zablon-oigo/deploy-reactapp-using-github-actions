@@ -4,6 +4,7 @@ import Hero from "./components/Hero"
 import About from "./components/About";
 import Features from "./components/Features";
 import Testimonial from "./components/Testimonial";
+import CtaSection from "./components/CtaSection";
 
 function App() {
   Aos.init({
@@ -17,6 +18,7 @@ function App() {
       <About/>
       <Features/>
       <Testimonial/>
+      <CtaSection/>
       </div>
     </>
   )
