@@ -1,13 +1,11 @@
 import React from 'react'
 import {footerData} from '../Data'
-import { BiCopyright } from 'react-icons/bi'
-import { copyrightData } from '../Data';
+import Copyright from './Copyright';
 export default function Footer() {
     const{logo,address,email,phone,list1,list2,socialList}=footerData;
-    const{text,icon}=copyrightData;
   return (
     <>
-    <footer className="">
+    <footer className="" data-aos="fade-up">
         <div className="container mx-auto">
             <div className="flex flex-col text-center md:flex-row md:text-left gap-y-12 ">
                 <div className="w-[45%]   mx-auto flex flex-col items-center md:items-start">
@@ -75,6 +73,7 @@ export default function Footer() {
                     </div>
                     </div>
             </div>
+            <Copyright/>
         </div>
     </footer>
     </>
