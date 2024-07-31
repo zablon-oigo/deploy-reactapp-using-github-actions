@@ -1,4 +1,4 @@
-name: Build and Deploy React to GitHub Pages
+name: Build and Deploy Vite App to GitHub Pages
 
 on:
   push:
@@ -24,24 +24,11 @@ jobs:
       - name: Build Project
         run: npm run build
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
-
-      - name: Install Dependencies
-        run: npm ci
+      - name: List directory contents
+        run: ls -R
 
   deploy:
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -69,7 +56,9 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './build'
+          path: './dist' 
+          name: github-pages
+          retention-days: 7
 
       - name: Deploy to GitHub Pages
         id: deployment
