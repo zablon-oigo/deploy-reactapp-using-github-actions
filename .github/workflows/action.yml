@@ -24,9 +24,6 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: List directory contents
-        run: ls -R
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -51,7 +48,7 @@ jobs:
         run: npm run build
 
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
           path: './dist' 
           name: github-pages
