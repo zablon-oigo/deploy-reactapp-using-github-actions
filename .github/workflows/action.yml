@@ -1,4 +1,4 @@
-name: Build and Deploy React to github pages
+name: Build and Deploy React to GitHub Pages
 
 on:
   push:
@@ -19,9 +19,10 @@ jobs:
           node-version: '20.x'
 
       - name: Install Dependencies
-        run: |
-          npm ci
-          npm run build
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
 
   test:
     needs: build
@@ -37,7 +38,10 @@ jobs:
           node-version: '20.x'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Run Tests
+        run: npm test
 
   deploy:
     needs: test
@@ -50,29 +54,25 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: react
-
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Project
         run: npm run build
 
+      - name: List directory contents
+        run: ls -R
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "./build" 
+          path: './build'
 
       - name: Deploy to GitHub Pages
         id: deployment
